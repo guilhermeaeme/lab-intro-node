@@ -5,7 +5,7 @@ class SortedList {
   }
   add(item) {
     this.items.push(item);
-    this.items = this.items.sort((a, b) => a > b);
+    this.items.sort((a, b) => a - b);
     this.length++;
   }
   get(pos) {
@@ -13,12 +13,12 @@ class SortedList {
   }
   max() {
     if(this.notEmpty()) {
-      return this.items[this.length - 1];
+      return this.get(this.length);
     }
   }
   min() {
     if(this.notEmpty()) {
-      return this.items[0];
+      return this.get(1);
     }
   }
   average() {
